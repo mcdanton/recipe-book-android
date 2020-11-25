@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">recipe-book</string>
+    
+    <string name="suggest_meal_surprise_me_button">Surprise Me</string>
 </resources>
