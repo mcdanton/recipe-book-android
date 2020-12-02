@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">recipe-book</string>
-    
+
     <string name="suggest_meal_surprise_me_button">Surprise Me</string>
+    <string name="suggest_meal_meat_label">MEAT</string>
+    <string name="suggest_meal_pareve_label">PAREVE</string>
+    <string name="suggest_meal_dairy_label">DAIRY</string>
+
 </resources>
