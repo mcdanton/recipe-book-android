@@ -5,5 +5,11 @@
     <string name="suggest_meal_meat_label">MEAT</string>
     <string name="suggest_meal_pareve_label">PAREVE</string>
     <string name="suggest_meal_dairy_label">DAIRY</string>
+    <string name="suggest_meal_cook_time_label">COOK TIME:</string>
+    <string name="suggest_meal_show_cook_time_button">Show cook time</string>
+
+    <string name="cook_time_hours_label">hr</string>
+    <string name="cook_time_minutes_label">mins</string>
+
 
 </resources>

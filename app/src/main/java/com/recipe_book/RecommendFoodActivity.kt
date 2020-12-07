@@ -2,6 +2,7 @@ package com.recipe_book
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.NumberPicker
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recipe_book.R
 import javax.inject.Inject
@@ -23,7 +24,19 @@ class RecommendFoodActivity: AppCompatActivity() {
 
         (application as App).appComponent.inject(this)
 
+        setupCookTimeNumberPicker()
         setViewListeners()
+    }
+
+    private fun setupCookTimeNumberPicker() {
+        val hoursNumberPicker = findViewById<NumberPicker>(R.id.hours_number_picker)
+        val minutesNumberPicker = findViewById<NumberPicker>(R.id.minutes_number_picker)
+
+        hoursNumberPicker.minValue = 0
+        hoursNumberPicker.maxValue = 24
+
+        minutesNumberPicker.minValue = 0
+        minutesNumberPicker.maxValue = 59
     }
 
     private fun setViewListeners() {
