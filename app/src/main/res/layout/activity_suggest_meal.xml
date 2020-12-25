@@ -28,7 +28,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/buttonPareve"
@@ -42,7 +42,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/buttonDairy"
@@ -56,7 +56,7 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"></Space>
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
@@ -88,5 +88,15 @@
         </include>
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/plus_sign"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="50dp" />
 
 </RelativeLayout>

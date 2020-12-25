@@ -1,5 +1,6 @@
 package com.recipe_book
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.NumberPicker
@@ -12,6 +13,7 @@ class RecommendFoodActivity: AppCompatActivity() {
     private val meatButton: Button by lazy { findViewById<Button>(R.id.buttonMeat) }
     private val dairyButton: Button by lazy { findViewById<Button>(R.id.buttonDairy) }
     private val pareveButton: Button by lazy { findViewById<Button>(R.id.buttonPareve) }
+    private val addFoodButton: Button by lazy { findViewById<Button>(R.id.fab) }
 
     @Inject
     lateinit var presenter: RecommendFoodPresenter
@@ -20,7 +22,7 @@ class RecommendFoodActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_suggest_meal)
 
-        title = "Suggest Meal"
+        title = getString(R.string.suggest_meal_activity_title)
 
         (application as App).appComponent.inject(this)
 
@@ -52,6 +54,11 @@ class RecommendFoodActivity: AppCompatActivity() {
         }
         pareveButton.setOnClickListener {
             it.isSelected = !it.isSelected
+        }
+
+        addFoodButton.setOnClickListener {
+            val intent = Intent(this, AddFoodActivity::class.java)
+            startActivity(intent)
         }
     }
 

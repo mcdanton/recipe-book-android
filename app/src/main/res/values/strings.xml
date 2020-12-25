@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">recipe-book</string>
 
+    <string name="suggest_meal_activity_title">Suggest Meal</string>
     <string name="suggest_meal_surprise_me_button">Surprise Me</string>
     <string name="suggest_meal_meat_label">MEAT</string>
     <string name="suggest_meal_pareve_label">PAREVE</string>
@@ -10,6 +11,8 @@
 
     <string name="cook_time_hours_label">hr</string>
     <string name="cook_time_minutes_label">mins</string>
+
+    <string name="add_food_activity_title">Add Food</string>
 
 
 </resources>

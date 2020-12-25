@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name="com.recipe_book.AddFoodActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
