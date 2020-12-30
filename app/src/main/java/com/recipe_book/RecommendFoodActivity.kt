@@ -57,7 +57,7 @@ class RecommendFoodActivity: AppCompatActivity() {
         }
 
         addFoodButton.setOnClickListener {
-            val intent = Intent(this, AddFoodActivity::class.java)
+            val intent = Intent(this, AddRecipeActivity::class.java)
             startActivity(intent)
         }
     }
