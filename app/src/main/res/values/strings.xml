@@ -17,5 +17,7 @@
     <string name="add_recipe_status">Status</string>
     <string name="add_recipe_cook_time">Cook Time</string>
     <string name="add_recipe_add">Add</string>
+    <string name="add_recipe_no_food_name">Food Name field cannot be blank</string>
+
 
 </resources>

@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.NumberPicker
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recipe_book.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import javax.inject.Inject
 
 class RecommendFoodActivity: AppCompatActivity() {
@@ -13,7 +14,7 @@ class RecommendFoodActivity: AppCompatActivity() {
     private val meatButton: Button by lazy { findViewById<Button>(R.id.buttonMeat) }
     private val dairyButton: Button by lazy { findViewById<Button>(R.id.buttonDairy) }
     private val pareveButton: Button by lazy { findViewById<Button>(R.id.buttonPareve) }
-    private val addFoodButton: Button by lazy { findViewById<Button>(R.id.fab) }
+    private val addFoodButton: FloatingActionButton by lazy { findViewById<FloatingActionButton>(R.id.fab) }
 
     @Inject
     lateinit var presenter: RecommendFoodPresenter
