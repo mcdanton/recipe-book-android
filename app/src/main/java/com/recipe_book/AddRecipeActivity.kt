@@ -7,7 +7,7 @@ import com.example.recipe_book.R
 import kotlinx.android.synthetic.main.activity_add_recipe.*
 import javax.inject.Inject
 
-class AddRecipeActivity: AppCompatActivity() {
+class AddRecipeActivity : AppCompatActivity(), AddRecipePresenter.AddRecipeView {
 
     @Inject
     lateinit var presenter: AddRecipePresenter

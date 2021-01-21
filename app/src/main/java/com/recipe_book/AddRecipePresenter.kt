@@ -1,12 +1,21 @@
 package com.recipe_book
 
-class AddRecipePresenter : BasePresenter<AddRecipePresenter.View>() {
+import timber.log.Timber
+import javax.inject.Inject
+
+class AddRecipePresenter @Inject constructor(
+    private val recipeService: RecipeService
+) : BasePresenter<AddRecipePresenter.AddRecipeView>() {
+
 
     override fun onViewAttached() {
         super.onViewAttached()
     }
 
-    interface View : BaseView {
+    fun onAddButtonClicked(recipe: Recipe) {
+        recipeService.saveRecipe(recipe)
+    }
 
+    interface AddRecipeView : BaseView {
     }
 }

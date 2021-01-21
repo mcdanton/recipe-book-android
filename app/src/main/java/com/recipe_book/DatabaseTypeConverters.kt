@@ -28,5 +28,12 @@ class DatabaseTypeConverters {
     }
     */
 
+    @TypeConverter
+    fun toKosherClassification(value: Int): KosherClassification = enumValues<KosherClassification>()[value]
+
+
+    @TypeConverter
+    fun fromKosherClassification(value: KosherClassification) = value.ordinal
+
 
 }
