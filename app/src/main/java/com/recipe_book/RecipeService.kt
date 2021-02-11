@@ -1,7 +1,6 @@
 package com.recipe_book
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -10,10 +9,15 @@ class RecipeService @Inject constructor(
 ) {
 
     fun saveRecipe(recipe: Recipe) {
-        Timber.d("@@@ I was called")
-        GlobalScope.launch {
+        GlobalScope.launch(Dispatchers.IO) {
             recipeDao.insertRecipe(recipe)
         }
     }
+
+    suspend fun fetchAllRecipes(kosherClassification: List<KosherClassification>): List<Recipe> =
+        withContext(Dispatchers.IO) {
+            Timber.d("@@@ Fetching Recipes")
+            recipeDao.getAll(kosherClassification)
+        }
 
 }

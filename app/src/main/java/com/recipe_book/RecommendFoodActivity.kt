@@ -7,9 +7,10 @@ import android.widget.NumberPicker
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recipe_book.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_suggest_meal.*
 import javax.inject.Inject
 
-class RecommendFoodActivity: AppCompatActivity() {
+class RecommendFoodActivity : AppCompatActivity(), RecommendFoodPresenter.View {
 
     private val meatButton: Button by lazy { findViewById<Button>(R.id.buttonMeat) }
     private val dairyButton: Button by lazy { findViewById<Button>(R.id.buttonDairy) }
@@ -29,6 +30,11 @@ class RecommendFoodActivity: AppCompatActivity() {
 
         setupCookTimeNumberPicker()
         setViewListeners()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.onViewAttached(this)
     }
 
     private fun setupCookTimeNumberPicker() {
@@ -61,6 +67,28 @@ class RecommendFoodActivity: AppCompatActivity() {
             val intent = Intent(this, AddRecipeActivity::class.java)
             startActivity(intent)
         }
+
+        buttonFetchRecipes.setOnClickListener {
+            val classificationList: List<KosherClassification> =
+                listOf(
+                    meatButton,
+                    dairyButton,
+                    pareveButton
+                ).filter { it.isSelected }
+                    .map {
+                        when (it) {
+                            meatButton -> KosherClassification.MEAT
+                            dairyButton -> KosherClassification.MILK
+                            pareveButton -> KosherClassification.PAREVE
+                            else -> KosherClassification.PAREVE
+                        }
+                    }
+            presenter.showRecipes(classificationList)
+        }
+    }
+
+    override fun showResults(recipes: List<Recipe>) {
+        textViewFoodResults.text = recipes.toString()
     }
 
 }

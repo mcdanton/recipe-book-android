@@ -8,12 +8,12 @@ data class Recipe(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     var name: String,
-    var ingredients: List<String>,
-    var kosherClassification: KosherClassification,
-    var cookTime: String?,
-    var servings: String?,
-    var instructions: String?,
-    var image: String?
+    var kosherClassification: KosherClassification
+//    var ingredients: List<String>,
+//    var cookTime: String?,
+//    var servings: String?,
+//    var instructions: String?,
+//    var image: String?
 )
 
 enum class KosherClassification {

@@ -11,7 +11,7 @@ import javax.inject.Singleton
 class PresenterModule {
     @Singleton
     @Provides
-    fun provideRecommendFoodPresenter(): RecommendFoodPresenter = RecommendFoodPresenter()
+    fun provideRecommendFoodPresenter(recipeService: RecipeService): RecommendFoodPresenter = RecommendFoodPresenter(recipeService)
 
     @Singleton
     @Provides

@@ -69,6 +69,7 @@
         android:text="@string/suggest_meal_surprise_me_button" />
 
     <LinearLayout
+        android:id="@+id/cookTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutFoodClassification"
@@ -89,6 +90,15 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textViewFoodResults"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/cookTime"
+        android:background="@color/grey"
+        />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="75dp"
@@ -98,5 +108,15 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="80dp"
         android:layout_marginEnd="50dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonFetchRecipes"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/plus_sign"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginStart="50dp" />
 
 </RelativeLayout>

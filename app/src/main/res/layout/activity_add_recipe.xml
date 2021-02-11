@@ -51,6 +51,12 @@
             android:layout_height="wrap_content"
             />
 
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_food_classification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

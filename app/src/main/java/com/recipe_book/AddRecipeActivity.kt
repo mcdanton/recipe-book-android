@@ -28,7 +28,11 @@ class AddRecipeActivity : AppCompatActivity(), AddRecipePresenter.AddRecipeView 
             if (edit_text_food_name.text.isNullOrBlank()) {
                 Toast.makeText(this, R.string.add_recipe_no_food_name, Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this, "Add food to database", Toast.LENGTH_LONG).show()
+                val recipe = Recipe(
+                    name = edit_text_food_name.text.toString(),
+                    kosherClassification = KosherClassification.MILK
+                )
+                presenter.onAddButtonClicked(recipe)
             }
         }
     }

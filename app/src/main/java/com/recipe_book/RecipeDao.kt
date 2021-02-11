@@ -5,13 +5,20 @@ import androidx.room.*
 @Dao
 interface RecipeDao {
 
-    @Query("Select * from recipe")
-    fun getAll(): List<Recipe>
+    @Query("Select * from recipe where kosherClassification in (:kosherClassifications)")
+    suspend fun getAll(
+        kosherClassifications: List<KosherClassification> =
+            listOf(
+                KosherClassification.MEAT,
+                KosherClassification.MILK,
+                KosherClassification.PAREVE
+            )
+    ): List<Recipe>
 
-    @Insert (onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRecipe(recipe: Recipe): Long
 
-    @Insert (onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertRecipes(vararg recipes: Recipe): List<Long>
 
     @Delete

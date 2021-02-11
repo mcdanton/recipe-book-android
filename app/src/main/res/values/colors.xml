@@ -6,6 +6,7 @@
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="grey">#808080</color>
     <color name="forest">#4CA858</color>
     <color name="forest_transparent">#804CA858</color>
 
