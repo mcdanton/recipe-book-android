@@ -20,4 +20,5 @@ enum class KosherClassification {
     MEAT,
     MILK,
     PAREVE;
+
 }

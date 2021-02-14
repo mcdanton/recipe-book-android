@@ -33,31 +33,25 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_food_status"
+    <TextView
+        android:id="@+id/text_food_classification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_food_name"
         android:layout_marginTop="35dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="Food Status"
-        >
+        />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_food_status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/spinner_food_classification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/text_food_classification"
+            android:layout_marginTop="35dp"
             />
 
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_food_cook_time"
@@ -65,7 +59,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/guideline"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_food_status"
+        app:layout_constraintTop_toBottomOf="@id/spinner_food_classification"
         android:layout_marginTop="35dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Cook Time"

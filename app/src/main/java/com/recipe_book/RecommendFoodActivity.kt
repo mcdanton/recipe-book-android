@@ -70,11 +70,8 @@ class RecommendFoodActivity : AppCompatActivity(), RecommendFoodPresenter.View {
 
         buttonFetchRecipes.setOnClickListener {
             val classificationList: List<KosherClassification> =
-                listOf(
-                    meatButton,
-                    dairyButton,
-                    pareveButton
-                ).filter { it.isSelected }
+                listOf(meatButton, dairyButton, pareveButton)
+                    .filter { it.isSelected }
                     .map {
                         when (it) {
                             meatButton -> KosherClassification.MEAT
