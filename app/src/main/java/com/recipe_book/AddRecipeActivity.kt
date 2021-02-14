@@ -51,7 +51,7 @@ class AddRecipeActivity : AppCompatActivity(), AddRecipePresenter.AddRecipeView,
             } else {
                 val recipe = Recipe(
                     name = edit_text_food_name.text.toString(),
-                    kosherClassification = KosherClassification.valueOf(text_food_classification.text.toString())
+                    kosherClassification = KosherClassification.valueOf(spinner_food_classification.selectedItem.toString())
                 )
                 presenter.onAddButtonClicked(recipe)
             }
@@ -63,7 +63,11 @@ class AddRecipeActivity : AppCompatActivity(), AddRecipePresenter.AddRecipeView,
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
-        text_food_classification.text = foodClassificationList[position]
+
+    }
+
+    override fun exit() {
+        finish()
     }
 
 

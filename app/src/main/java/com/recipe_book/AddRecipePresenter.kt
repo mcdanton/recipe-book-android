@@ -9,8 +9,10 @@ class AddRecipePresenter @Inject constructor(
 
     fun onAddButtonClicked(recipe: Recipe) {
         recipeService.saveRecipe(recipe)
+        view?.exit()
     }
 
     interface AddRecipeView : BaseView {
+        fun exit()
     }
 }
