@@ -5,12 +5,20 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Recipe(
-    @PrimaryKey
-    val id: String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
     var name: String,
-    var ingredients: List<String>,
-    var cookTime: String?,
-    var servings: String?,
-    var instructions: String?,
-    var image: String?
+    var kosherClassification: KosherClassification
+//    var ingredients: List<String>,
+//    var cookTime: String?,
+//    var servings: String?,
+//    var instructions: String?,
+//    var image: String?
 )
+
+enum class KosherClassification {
+    MEAT,
+    MILK,
+    PAREVE;
+
+}

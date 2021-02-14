@@ -1,18 +1,25 @@
 package com.recipe_book
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface RecipeDao {
 
-    @Query("Select * from recipe")
-    fun getAll(): List<Recipe>
+    @Query("Select * from recipe where kosherClassification in (:kosherClassifications)")
+    suspend fun getAll(
+        kosherClassifications: List<KosherClassification> =
+            listOf(
+                KosherClassification.MEAT,
+                KosherClassification.MILK,
+                KosherClassification.PAREVE
+            )
+    ): List<Recipe>
 
-    @Insert
-    fun insertAll(vararg recipes: Recipe)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertRecipe(recipe: Recipe): Long
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertRecipes(vararg recipes: Recipe): List<Long>
 
     @Delete
     fun delete(recipe: Recipe)

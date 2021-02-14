@@ -12,7 +12,12 @@
     <string name="cook_time_hours_label">hr</string>
     <string name="cook_time_minutes_label">mins</string>
 
-    <string name="add_food_activity_title">Add Food</string>
+    <string name="add_recipe_activity_title">Add Recipe</string>
+    <string name="add_recipe_food_name">Food Name:</string>
+    <string name="add_recipe_status">Status</string>
+    <string name="add_recipe_cook_time">Cook Time</string>
+    <string name="add_recipe_add">Add</string>
+    <string name="add_recipe_no_food_name">Food Name field cannot be blank</string>
 
 
 </resources>

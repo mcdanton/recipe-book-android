@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.recipe_book.AddFoodActivity"
+            android:name="com.recipe_book.AddRecipeActivity"
             android:screenOrientation="portrait" />
     </application>
 

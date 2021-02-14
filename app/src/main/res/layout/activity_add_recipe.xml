@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="25dp"
+        android:orientation="vertical"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_food_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginHorizontal="25dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Food Name"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_food_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_food_classification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/layout_food_name"
+            android:layout_marginTop="35dp"
+            android:layout_marginHorizontal="25dp"
+            />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_food_cook_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_food_classification"
+        android:layout_marginTop="35dp"
+        android:layout_marginHorizontal="25dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Cook Time"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_cook_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_add_recipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/add_recipe_add"
+        tools:text="@string/add_recipe_add"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
